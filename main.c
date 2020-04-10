@@ -175,27 +175,7 @@ void printProfit(){
 }
 
 void updateInfo(){
-	char name[20];
-	int price, saleNum, primeCost, laborCost;
 
-	printf("Enter a name : ");
-	scanf("%s", name);
-
-	Product* p = p_search_name(name);
-
-	if(p){
-		printf("Price? ");
-		scanf("%d", &price);
-		printf("Number of sales? ");
-		scanf("%d", &saleNum);
-		printf("Prime cost? ");
-		scanf("%d", &primeCost);
-		printf("Labor cost? ");
-		scanf("%d", &laborCost);
-	}
-	else{
-		printf("No such product!\n");
-	}
 }
 
 void deleteInfo(){
