@@ -73,33 +73,33 @@ void bringInfo(){
 }
 
 void createInfo(){
-    if(!p_available(1)){
-        printf("There is not enough space!\n");
-        return;
-    }
+	if(!p_available(1)){
+		printf("There is not enough space!\n");
+		return;
+	}
 
-    char name[20];
-    int price, saleNum, primeCost, laborCost;
+	char name[20];
+	int price, saleNum, primeCost, laborCost;
 
-    printf("Enter a new product information\n");
-    printf("Name? ");
-    scanf("%s", name);
+	printf("Enter a new product information\n");
+	printf("Name? ");
+	scanf("%s", name);
 
-    if(p_search_name(name)!=NULL){
-        printf("Duplicated name!\n");
-        return;
-    }
+	if(p_search_name(name)!=NULL){
+		printf("Duplicated name!\n");
+		return;
+	}
 
-    printf("Price? ");
-    scanf("%d", &price);
-    printf("Number of sales? ");
-    scanf("%d", &saleNum);
-    printf("Prime cost? ");
-    scanf("%d", &primeCost);
-    printf("Labor cost? ");
-    scanf("%d", &laborCost);
+	printf("Price? ");
+	scanf("%d", &price);
+	printf("Number of sales? ");
+	scanf("%d", &saleNum);
+	printf("Prime cost? ");
+	scanf("%d", &primeCost);
+	printf("Labor cost? ");
+	scanf("%d", &laborCost);
 
-    p_create(name, price, saleNum, primeCost, laborCost);
+	p_create(name, price, saleNum, primeCost, laborCost);
 }
 
 void readInfo(){
@@ -175,7 +175,27 @@ void printProfit(){
 }
 
 void updateInfo(){
+	char name[20];
+	int price, saleNum, primeCost, laborCost;
 
+	printf("Enter a name : ");
+	scanf("%s", name);
+
+	Product* p = p_search_name(name);
+
+	if(p){
+		printf("Price? ");
+		scanf("%d", &price);
+		printf("Number of sales? ");
+		scanf("%d", &saleNum);
+		printf("Prime cost? ");
+		scanf("%d", &primeCost);
+		printf("Labor cost? ");
+		scanf("%d", &laborCost);
+	}
+	else{
+		printf("No such product!\n");
+	}
 }
 
 void deleteInfo(){
