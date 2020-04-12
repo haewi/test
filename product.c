@@ -161,6 +161,7 @@ void p_update(Product* p, int price, int saleNum, int prime, int labor){
 	#endif
 } // 레코드에 새로운 정보 업데이트
 
+<<<<<<< HEAD
 void p_delete(Product* p){ 
 	int index;
 	for(int i=0; i<MAX_PRODUCT; i++){
@@ -179,11 +180,32 @@ void p_delete(Product* p){
 	products[index]=NULL;   // managing pointers
 	_count--;
 
+=======
+// int p_all_profit(){
+    
+// }
+
+void p_delete(Product* p){
+	int index;
+	for(int i=0; i<MAX_PRODUCT; i++){
+		if(products[i] == p){
+			#ifdef DEBUG
+			printf("[DEBUG 12] (delete) found the index for product %s\n", p->name);
+			#endif
+			index = i;
+			break;
+		}
+	}
+	free(p);		// free memory
+	products[index]=NULL;	// managing pointers
+	_count--;
+>>>>>>> b6e4513aaa76185ce477f2f8ec4f9c89f9b182a6
 	#ifdef DEBUG
 	printf("[DEBUG 13] (delete) product successfully deleted\n");
 	#endif
 } // 레코드 삭제
 
+<<<<<<< HEAD
 
 void p_sort_profit(){
 	int i, j;
@@ -192,11 +214,24 @@ void p_sort_profit(){
 	printf("[DEBUG 14] (sort profit) starting to sort record\n");
 	#endif
 
+=======
+void p_sort_profit(){
+	int i, j;
+	
+	#ifdef DEBUG
+	printf("[DEBUG 14] (sort profit) starting to sort record\n");
+	#endif
+	
+>>>>>>> b6e4513aaa76185ce477f2f8ec4f9c89f9b182a6
 	for(i=0; i<MAX_PRODUCT-1 ; i++){
 		int max = i;
 		if(products[i] == NULL){
 			continue;
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> b6e4513aaa76185ce477f2f8ec4f9c89f9b182a6
 		for(j=i+1; j<MAX_PRODUCT; j++){
 			if(products[j] == NULL){
 				break;
@@ -222,3 +257,12 @@ void p_change_record(int x, int y){
 	printf("[DEBUG 16] (change record) record successfully changed\n");
 	#endif
 } // 레코드 정보 교환
+
+
+
+
+
+
+
+
+
