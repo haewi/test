@@ -148,19 +148,83 @@ char* p_to_string(Product* a){
 	return str;
 } // 레코드 정보 문자열로 리턴
 
-// void p_update(Product* p, int price, int amount, int sales, int prime, int labor, int profit){
-    
-// }
+void p_update(Product* p, int price, int saleNum, int prime, int labor){
+	p->price = price;
+	p->saleNum = saleNum;
+	p->sales = price*saleNum;
+	p->primeCost = prime;
+	p->laborCost = labor;
+	p->profit = p->sales - (prime+labor)*saleNum;
+
+	#ifdef DEBUG
+	printf("[DEBUG 11] (update) %s's info is updated\n", p->name);
+	#endif
+} // 레코드에 새로운 정보 업데이트
 
 // int p_all_profit(){
     
 // }
 
-// void p_delete(Product* p){
-    
-// }
+void p_delete(Product* p){
+	int index;
+	for(int i=0; i<MAX_PRODUCT; i++){
+		if(products[i] == p){
+			#ifdef DEBUG
+			printf("[DEBUG 12] (delete) found the index for product %s\n", p->name);
+			#endif
+			index = i;
+			break;
+		}
+	}
+	free(p);		// free memory
+	products[index]=NULL;	// managing pointers
+	_count--;
+	#ifdef DEBUG
+	printf("[DEBUG 13] (delete) product successfully deleted\n");
+	#endif
+} // 레코드 삭제
 
-// int* p_sort_profit(){
-    
-// }
+void p_sort_profit(){
+	int i, j;
+	
+	#ifdef DEBUG
+	printf("[DEBUG 14] (sort profit) starting to sort record\n");
+	#endif
+	
+	for(i=0; i<MAX_PRODUCT-1 ; i++){
+		int max = i;
+		if(products[i] == NULL){
+			continue;
+		}
+
+		for(j=i+1; j<MAX_PRODUCT; j++){
+			if(products[j] == NULL){
+				break;
+			}
+			if(products[max]->profit < products[j]->profit){
+				max = j;
+			}
+		}
+		p_change_record(i, max);
+	}
+
+	#ifdef DEBUG
+	printf("[DEBUG 15] (sort profit) sorting ended\n");
+	#endif
+} // 높은 이윤 순서로 레코드 정보 정렬
+
+void p_change_record(int x, int y){
+	Product *p = products[x];
+	products[x] = products[y];
+	products[y] = p;
+
+	#ifdef DEBUG
+	printf("[DEBUG 16] (change record) record successfully changed\n");
+	#endif
+} // 레코드 정보 교환
+
+
+
+
+
 

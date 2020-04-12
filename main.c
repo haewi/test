@@ -190,14 +190,26 @@ void updateInfo(){
 		scanf("%d", &primeCost);
 		printf("Labor cost? ");
 		scanf("%d", &laborCost);
+
+		p_update(p, price, saleNum, primeCost, laborCost);
 	}   
 	else{
 		printf("No such product!\n");
-	}   
+	}
 }
 
 void deleteInfo(){
+	char name[20];
+	printf("Enter a name: ");
+	scanf("%s", name);
 
+	Product *p = p_search_name(name);
+	if(p){
+		p_delete(p);
+		printf("Product is deleted.\n");
+	}else{
+		printf("No such product!\n");
+	}
 }
 
 void saveInfo(){
@@ -212,5 +224,11 @@ void saveInfo(){
 }
 
 void sortByProfit(){
-
+	p_sort_profit();
+	printf("Records are sorted by profit!\n");
 }
+
+
+
+
+
