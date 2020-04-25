@@ -26,19 +26,10 @@ void p_create(char* name, int price, int saleNum, int prime, int labor);	// 레�
 int p_count();				// 존재하는 제품 개수 리턴
 void p_get_all(Product* a[]);		// 모든 제품 정보 가져오기
 char* p_to_string(Product* a);		// 제품 정보를 문자열로 만들기
-<<<<<<< HEAD
-void p_update(Product* p, int price, int amount, int sales, int prime, int labor, int profit);	// 제품 정보 업데이트
-=======
 void p_update(Product* p, int price, int saleNum, int prime, int labor);	// 제품 정보 업데이트
->>>>>>> b6e4513aaa76185ce477f2f8ec4f9c89f9b182a6
 int p_all_profit();			// 현재까지 총 이윤 리턴
 void p_report();			// 보고서 파일 작성
 void p_delete(Product* p);		// 제품 정보 삭제
 void p_save_file(Product* p);		// 제품 정보 파일에 저장
-<<<<<<< HEAD
-int* p_sort_profit();			// 높은 이윤인 제품의 인덱스 순서대로 리턴
-
-=======
 void p_sort_profit();			// 높은 이윤 순서대로 레코드 정보 정렬
 void p_change_record(int x, int y);	// x와 y를 인덱스로 갖는 제품들의 정보를 바꿈
->>>>>>> b6e4513aaa76185ce477f2f8ec4f9c89f9b182a6
