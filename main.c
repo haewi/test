@@ -83,7 +83,9 @@ void createInfo(){
 
 	printf("Enter a new product information\n");
 	printf("Name? ");
-	scanf("%s", name);
+	scanf("%*c");
+	fgets(name, 20, stdin);
+	name[strlen(name)-1] = '\0';
 
 	if(p_search_name(name)!=NULL){
 		printf("Duplicated name!\n");
@@ -103,30 +105,32 @@ void createInfo(){
 }
 
 void readInfo(){
-    char name[20];
-    Product* p;
+	char name[20];
+	Product* p;
 
-    printf("Name? ");
-    scanf("%s", name);
+	printf("Name? ");
+	scanf("%*c");
+	fgets(name, 20, stdin);
+	name[strlen(name)-1] = '\0';
+	
+	p = p_search_name(name);
+	if(p==NULL){
+		printf("There is no product!\n");
+		return;
+	}
 
-    p = p_search_name(name);
-    if(p==NULL){
-        printf("There is no product!\n");
-        return;
-    }
-
-    printf("Name : %s\n", p->name);
-    printf("Price : %d\n", p->price);
-    printf("Number of sales : %d\n", p->saleNum);
-    printf("Sales : %d\n", p->sales);
-    printf("Prime cost : %d\n", p->primeCost);
-    printf("Labor cost : %d\n", p->laborCost);
-    printf("Profit : %d\n", p->profit);
+	printf("Name : %s\n", p->name);
+	printf("Price : %d\n", p->price);
+	printf("Number of sales : %d\n", p->saleNum);
+	printf("Sales : %d\n", p->sales);
+	printf("Prime cost : %d\n", p->primeCost);
+	printf("Labor cost : %d\n", p->laborCost);
+	printf("Profit : %d\n", p->profit);
 }
 
 void listInfo(){
 	printf("All products\n");
-	printf("Name\t\tPrice\t\tSale Number\tSales\t\tPrime Cost\tLabor Cost\tProfit\n");
+	printf("Name\t\t\tPrice\t\tSale Number\tSales\t\t Prime Cost\tLabor Cost\tProfit\n");
 	int size = p_count();
 	Product* a[MAX_PRODUCT];
 
@@ -151,12 +155,12 @@ void makeReport(){
 	fprintf(f, "Number of products : %d\n", size);
 	fprintf(f, "Reporter : %s\n\n", name);
 	fprintf(f, "Contents\n");
-	fprintf(f, "Name\tPrice\t\tSale Number\tSales\t\tPrime Cost\tLabor Cost\tProfit\n");
-	fprintf(f, "-----------------------------------------------------------------------------------------------\n");
+	fprintf(f, "Name\t\t\tPrice\t\tSale Number\tSales\t\t Prime Cost\tLabor Cost\tProfit\n");
+	fprintf(f, "-----------------------------------------------------------------------------------------------------------------\n");
 	p_get_all(a);
 
 	for(int i=0; i<size; i++){
-		fprintf(f, "%s\n", p_to_string(a[i]));
+		fprintf(f, "%d. %s\n", i+1, p_to_string(a[i]));
 	}
 	fclose(f);
 	printf("Report created!\n");
@@ -178,7 +182,10 @@ void updateInfo(){
 	char name[20];
 	int price, saleNum, primeCost, laborCost;
 	printf("Enter a name : ");
-	scanf("%s", name);
+	scanf("%*c");
+	fgets(name, 20, stdin);
+	name[strlen(name)-1] = '\0';
+	
 	Product* p = p_search_name(name);
 	
 	if(p){
@@ -201,6 +208,7 @@ void updateInfo(){
 void deleteInfo(){
 	char name[20];
 	printf("Enter a name: ");
+	scanf("%*c");
 	scanf("%s", name);
 
 	Product *p = p_search_name(name);
@@ -219,7 +227,7 @@ void saveInfo(){
 	FILE* f = fopen("new_data.txt", "w");
 
 	for(int i=0; i<size; i++){
-		fprintf(f, "%s %d %d %d %d\n", a[i]->name, a[i]->price, a[i]->saleNum, a[i]->primeCost, a[i]->laborCost);
+		fprintf(f, "%d %d %d %d %s\n", a[i]->price, a[i]->saleNum, a[i]->primeCost, a[i]->laborCost, a[i]->name);
 	}
 }
 

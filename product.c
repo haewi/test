@@ -11,7 +11,9 @@ void p_input_filename(char* file){
 	f = fopen(file, "r");
 
 	while(!feof(f)){
-		int result = fscanf(f, "%s %d %d %d %d", n, &pr, &sn, &pc, &lc);
+		int result = fscanf(f, "%d %d %d %d ", &pr, &sn, &pc, &lc);
+		fgets(n, 20, f);
+		n[strlen(n)-1]='\0';
 		if(result<1) break;
 
 	#ifdef DEBUG
@@ -54,10 +56,6 @@ int p_file_count(char* file){
 
 	return count;
 } // 데이터 파일에 있는 제품 수 리턴
-
-// void p_file_to_record(){
-
-// }
 
 int p_available(int n){
 	if(MAX_PRODUCT-_count >= n){
@@ -139,7 +137,7 @@ void p_get_all(Product* a[]){
 
 char* p_to_string(Product* a){
 	static char str[200];
-	sprintf(str, "%s\t%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d", a->name, a->price, a->saleNum, a->sales, a->primeCost, a->laborCost, a->profit);
+	sprintf(str, "%s\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d", a->name, a->price, a->saleNum, a->sales, a->primeCost, a->laborCost, a->profit);
 
 	#ifdef DEBUG
 	printf("[DEBUG 10] (to string) turning %s's info to string finished\n", a->name);
@@ -180,7 +178,6 @@ void p_delete(Product* p){
 	#endif
 } // 레코드 삭제
 
-
 void p_sort_profit(){
 	int i, j;
 	
@@ -193,6 +190,7 @@ void p_sort_profit(){
 		if(products[i] == NULL){
 			continue;
 		}
+
 		for(j=i+1; j<MAX_PRODUCT; j++){
 			if(products[j] == NULL){
 				break;
@@ -218,9 +216,6 @@ void p_change_record(int x, int y){
 	printf("[DEBUG 16] (change record) record successfully changed\n");
 	#endif
 } // 레코드 정보 교환
-
-
-
 
 
 
