@@ -11,11 +11,12 @@ void updateInfo();
 void deleteInfo();
 void saveInfo();
 void sortByProfit();
+void seeReport();
 
 int main(){
 	int menu;
 	while(1){
-		printf("\nMenu : 1.Bring 2.Create 3.Read 4.List 5.Make Report 6.Total Profit 7.Update 8.Delete 9.Save 10.Sort(By Profit) 0.Quit > ");
+		printf("\nMenu : 1.Bring 2.Create 3.Read 4.List 5.Make Report 6.Total Profit 7.Update 8.Delete 9.Save 10.Sort(By Profit) 11.See Report 0.Quit > ");
 		scanf("%d", &menu);
 		printf("\n");
 		switch(menu){
@@ -48,6 +49,9 @@ int main(){
 				break;
 			case 10:
 				sortByProfit();
+				break;
+			case 11:
+				seeReport();
 				break;
 			case 0:
 			default:
@@ -236,7 +240,23 @@ void sortByProfit(){
 	printf("Records are sorted by profit!\n");
 }
 
+void seeReport(){
+	char file[50], str[200];
 
+	printf("filename? :");
+	scanf("%s%*c", file);
+
+	FILE* f = fopen(file, "r");
+	
+	printf("The %s report is...\n\n", file);
+
+	while(!feof(f)){
+		int result = fscanf(f, "%s", str);
+		if(result<1) break;
+		
+		printf("%s", str);
+	}
+}
 
 
 
