@@ -251,8 +251,7 @@ void seeReport(){
 	printf("The %s report is...\n\n", file);
 
 	while(!feof(f)){
-		int result = fscanf(f, "%s", str);
-		if(result<1) break;
+		if(fgets(str, 200, f)==NULL) break;
 		
 		printf("%s", str);
 	}
