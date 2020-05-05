@@ -12,6 +12,7 @@ void deleteInfo();
 void saveInfo();
 void sortByProfit();
 void seeReport();
+void sortByName(){
 
 int main(){
 	int menu;
@@ -53,6 +54,8 @@ int main(){
 			case 11:
 				seeReport();
 				break;
+			case 12:
+				sortByName();
 			case 0:
 			default:
 				return 0;	
@@ -255,6 +258,11 @@ void seeReport(){
 		
 		printf("%s", str);
 	}
+}
+
+void sortByName(){
+	p_sort_name();
+	printf("Records are sorted by name!\n");
 }
 
 
