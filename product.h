@@ -31,3 +31,4 @@ void p_delete(Product* p);		// 제품 정보 삭제
 void p_save_file(Product* p);		// 제품 정보 파일에 저장
 void p_sort_profit();			// 높은 이윤 순서대로 레코드 정보 정렬
 void p_change_record(int x, int y);	// x와 y를 인덱스로 갖는 제품들의 정보를 바꿈
+void p_sort_name();			// 이름 순서대로 레코드 정보 정렬
