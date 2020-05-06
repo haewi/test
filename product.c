@@ -217,7 +217,22 @@ void p_change_record(int x, int y){
 	#endif
 } // 레코드 정보 교환
 
+void p_sort_name(){
+	int i, j;
 
+	for(i=0; i<mAX_PRODUCT-1 ; i++){
+		int alph = i;
+		if(products[i] == NULL){
+			continue;
+		}
+		
+		for(j=i+1; j<MAX_PRODUCT; j++){
+			if(products[j] == NULL) break;
+
+			여기부터 코드해라
+	}
+
+}
 
 
 
