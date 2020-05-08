@@ -229,7 +229,10 @@ void p_sort_name(){
 		for(j=i+1; j<MAX_PRODUCT; j++){
 			if(products[j] == NULL) break;
 
-			여기부터 코드해라
+			if(products[alph]->name > products[j]->name) alph = j;
+
+		}
+		p_change_record(i, alph);
 	}
 
 }
