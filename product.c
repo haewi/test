@@ -220,7 +220,7 @@ void p_change_record(int x, int y){
 void p_sort_name(){
 	int i, j;
 
-	for(i=0; i<mAX_PRODUCT-1 ; i++){
+	for(i=0; i<MAX_PRODUCT-1 ; i++){
 		int alph = i;
 		if(products[i] == NULL){
 			continue;
@@ -229,7 +229,7 @@ void p_sort_name(){
 		for(j=i+1; j<MAX_PRODUCT; j++){
 			if(products[j] == NULL) break;
 
-			if(products[alph]->name > products[j]->name) alph = j;
+			if(strcmp(products[alph]->name, products[j]->name) > 0) alph = j;
 
 		}
 		p_change_record(i, alph);

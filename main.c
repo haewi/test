@@ -12,12 +12,12 @@ void deleteInfo();
 void saveInfo();
 void sortByProfit();
 void seeReport();
-void sortByName(){
+void sortByName();
 
 int main(){
 	int menu;
 	while(1){
-		printf("\nMenu : 1.Bring 2.Create 3.Read 4.List 5.Make Report 6.Total Profit 7.Update 8.Delete 9.Save 10.Sort(By Profit) 11.See Report 0.Quit > ");
+		printf("\nMenu : 1.Bring 2.Create 3.Read 4.List 5.Make Report 6.Total Profit 7.Update 8.Delete 9.Save 10.Sort(By Profit) 11.See Report 12.Sort(By Name) 0.Quit > ");
 		scanf("%d", &menu);
 		printf("\n");
 		switch(menu){
@@ -56,6 +56,7 @@ int main(){
 				break;
 			case 12:
 				sortByName();
+				break;
 			case 0:
 			default:
 				return 0;	
