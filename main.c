@@ -17,7 +17,7 @@ void sortByName();
 int main(){
 	int menu;
 	while(1){
-		printf("\nMenu : 1.Bring 2.Create 3.Read 4.List 5.Make Report 6.Total Profit 7.Update 8.Delete 9.Save 10.Sort(By Profit) 11.See Report 12.Sort(By Name) 0.Quit > ");
+		printf("\n\t\t--Menu--\n\t1.Bring   \t2.Create   \t3.Read    \n\t4.List    \t5.Make Report\t6.Total Profit\n\t7.Update \t8.Delete  \t9.Save    \n\t10.Sort(By Profit)\t11.See Report\t12.Sort(By Name)\n\t0.Quit > ");
 		scanf("%d", &menu);
 		printf("\n");
 		switch(menu){
