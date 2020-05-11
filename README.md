@@ -15,7 +15,6 @@ line
 what?
 ***
 italic   
-_italic_
-
+_italic_ 
 bold   
 __bold__
