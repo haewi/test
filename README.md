@@ -14,7 +14,7 @@ horizontal
 line
 what?
 ***
-italic
+italic   
 _italic_
-bold
+bold   
 __bold__
