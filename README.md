@@ -11,7 +11,7 @@ horizontal
 *****
 - - -
 -----------------------   
-line
+line   
 what?
 ***
 italic   
