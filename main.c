@@ -281,9 +281,12 @@ void selecteUpdate(){
 
 	int choice;
 	printf("Choose what you want to update\n");
-	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Create\t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Selected Update\t0.Quit > ");
+	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Selected Update\t0.Quit > ");
 	scanf("%d", &choice);
-
+	switch(choice){
+		case 1:
+			
+	}
 }
 
 
