@@ -13,7 +13,7 @@ void saveInfo();
 void sortByProfit();
 void seeReport();
 void sortByName();
-void selecteUpdate();
+void selectUpdate();
 
 int main(){
 	int menu;
@@ -271,9 +271,9 @@ void sortByName(){
 }
 
 
-void selecteUpdate(){
+void selectUpdate(){
 	char name[20];
-	int price, saleNum, primeCost, laborCost;
+	//int price, saleNum, primeCost, laborCost;
 	printf("Enter a name : ");
 	scanf("%*c");
 	fgets(name, 20, stdin);
@@ -281,12 +281,12 @@ void selecteUpdate(){
 
 	int choice;
 	printf("Choose what you want to update\n");
-	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Selected Update\t0.Quit > ");
+	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Sale Number\n\t4.Sales\t\t\t5.Prime Cost\t\t6Labor Cost\n\t7.Profit\t\t0.Quit\n");
 	scanf("%d", &choice);
-	switch(choice){
-		case 1:
+	//switch(choice){
+	//	case 1:
 			
-	}
+	//}
 }
 
 
