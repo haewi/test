@@ -273,7 +273,6 @@ void sortByName(){
 
 void selectUpdate(){
 	char name[20];
-	//int price, saleNum, primeCost, laborCost;
 	printf("Enter a name : ");
 	scanf("%*c");
 	fgets(name, 20, stdin);
@@ -281,12 +280,27 @@ void selectUpdate(){
 
 	int choice;
 	printf("Choose what you want to update\n");
-	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Sale Number\n\t4.Sales\t\t\t5.Prime Cost\t\t6Labor Cost\n\t7.Profit\t\t0.Quit\n");
+	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Sale Number\n\t4.Prime Cost\t\t5.labor Cost\t\t0.Quit\n");
 	scanf("%d", &choice);
-	//switch(choice){
-	//	case 1:
-			
-	//}
+
+	switch(choice){
+		case 1:
+			p_change_name(name);
+			break;
+		case 2:
+			p_change_price(name);
+			break;
+		case 3:
+			p_change_saleNum(name);
+			break;
+		case 4:
+			p_change_prime(name);
+			break;
+		case 5:
+			p_change_labor(name);
+		default:
+			break;
+	}
 }
 
 

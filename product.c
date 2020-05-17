@@ -237,6 +237,29 @@ void p_sort_name(){
 
 }
 
+void p_change_name(char* name){
+	
+}
+
+void p_change_price(char* name){
+	
+}
+
+void p_change_saleNum(char* name){
+
+}
+
+void p_change_prime(char* name){
+	
+}
+
+void p_change_labor(char* name){
+	
+}
+
+
+
+
 
 
 
