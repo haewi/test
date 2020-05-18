@@ -19,7 +19,7 @@ int main(){
 	int menu;
 	while(1){
 		printf("\n\t\t--Menu--\n\t1.Bring\t\t\t2.Create\t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Selected Update\t0.Quit > ");
-		scanf("%d", &menu);
+		scanf("%d%*c", &menu);
 		printf("\n");
 		switch(menu){
 			case 1:
@@ -274,30 +274,37 @@ void sortByName(){
 void selectUpdate(){
 	char name[20];
 	printf("Enter a name : ");
-	scanf("%*c");
+	//scanf("%*c");
 	fgets(name, 20, stdin);
 	name[strlen(name)-1] = '\0';
+	printf("%s\n", name);
+	Product* p = p_search_name(name);
 
+	if(p==NULL){
+		printf("There is no product!\n");
+		return;
+	}
+	
 	int choice;
 	printf("Choose what you want to update\n");
 	printf("\n\t\t--Menu--\n\t1.Name \t\t\t2.Price \t\t3.Sale Number\n\t4.Prime Cost\t\t5.labor Cost\t\t0.Quit\n");
-	scanf("%d", &choice);
+	scanf("%d%*c", &choice);
 
 	switch(choice){
 		case 1:
-			p_change_name(name);
+			p_change_name(p);
 			break;
 		case 2:
-			p_change_price(name);
+			p_change_price(p);
 			break;
 		case 3:
-			p_change_saleNum(name);
+			p_change_saleNum(p);
 			break;
 		case 4:
-			p_change_prime(name);
+			p_change_prime(p);
 			break;
 		case 5:
-			p_change_labor(name);
+			p_change_labor(p);
 		default:
 			break;
 	}

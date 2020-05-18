@@ -237,23 +237,29 @@ void p_sort_name(){
 
 }
 
-void p_change_name(char* name){
+void p_change_name(Product* p){
+	printf("Change name to... : ");
+	char name[20];
+	fgets(name, 20, stdin);
+	name[strlen(name)-1] = '\0';
+	strcpy(p->name, name);
+
+	printf("Update finished!\n");
+}
+
+void p_change_price(Product* p){
 	
 }
 
-void p_change_price(char* name){
+void p_change_saleNum(Product* p){
+
+}
+
+void p_change_prime(Product* p){
 	
 }
 
-void p_change_saleNum(char* name){
-
-}
-
-void p_change_prime(char* name){
-	
-}
-
-void p_change_labor(char* name){
+void p_change_labor(Product* p){
 	
 }
 
