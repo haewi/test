@@ -257,7 +257,12 @@ void p_change_price(Product* p){
 }
 
 void p_change_saleNum(Product* p){
-	
+	printf("Change sale number to... : ");
+	int sn;
+	scanf("%d", sn);
+	p->saleNum = sn;
+
+	printf("Update finished!\n");
 }
 
 void p_change_prime(Product* p){
