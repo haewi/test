@@ -275,7 +275,12 @@ void p_change_prime(Product* p){
 }
 
 void p_change_labor(Product* p){
-	
+	printf("Change labor cost to... : ");
+	int lc;
+	scanf("%d", &lc);
+	p->laborCost = lc;
+
+	printf("Update finished!\n");
 }
 
 
