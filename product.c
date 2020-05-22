@@ -259,14 +259,19 @@ void p_change_price(Product* p){
 void p_change_saleNum(Product* p){
 	printf("Change sale number to... : ");
 	int sn;
-	scanf("%d", sn);
+	scanf("%d", &sn);
 	p->saleNum = sn;
 
 	printf("Update finished!\n");
 }
 
 void p_change_prime(Product* p){
-	
+	printf("Change prime cost to... : ");
+	int pr;
+	scanf("%d", &pr);
+	p->primeCost = pr;
+
+	printf("Update finished!\n");
 }
 
 void p_change_labor(Product* p){
