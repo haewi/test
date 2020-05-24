@@ -252,6 +252,7 @@ void p_change_price(Product* p){
 	int price;
 	scanf("%d", &price);
 	p->price = price;
+	p_update(p, p->price, p->saleNum, p->primeCost, p->laborCost);
 
 	printf("Update finished!\n");
 }
@@ -261,6 +262,7 @@ void p_change_saleNum(Product* p){
 	int sn;
 	scanf("%d", &sn);
 	p->saleNum = sn;
+	p_update(p, p->price, p->saleNum, p->primeCost, p->laborCost);
 
 	printf("Update finished!\n");
 }
@@ -270,6 +272,7 @@ void p_change_prime(Product* p){
 	int pr;
 	scanf("%d", &pr);
 	p->primeCost = pr;
+	p_update(p, p->price, p->saleNum, p->primeCost, p->laborCost);
 
 	printf("Update finished!\n");
 }
@@ -279,6 +282,7 @@ void p_change_labor(Product* p){
 	int lc;
 	scanf("%d", &lc);
 	p->laborCost = lc;
+	p_update(p, p->price, p->saleNum, p->primeCost, p->laborCost);
 
 	printf("Update finished!\n");
 }

@@ -143,7 +143,7 @@ void readInfo(){
 
 void listInfo(){
 	printf("All products\n");
-	printf("Name\t\t\tPrice\t\tSale Number\tSales\t\t Prime Cost\tLabor Cost\tProfit\n");
+	printf("Name\t\t\tPrice\t\tSale Number\tSales\t\tPrime Cost\tLabor Cost\tProfit\n");
 	int size = p_count();
 	Product* a[MAX_PRODUCT];
 
