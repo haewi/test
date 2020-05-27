@@ -287,6 +287,37 @@ void p_change_labor(Product* p){
 	printf("Update finished!\n");
 }
 
+void p_print_top_ten(){
+	int i, j;
+	for(i=0; i<MAX_PRODUCT-1 ; i++){
+		int max = i;
+		fgets(name, 20, stdin);
+
+		if(products[i] == NULL){
+			name[strlen(name)-1] = '\0';
+			continue;
+			Product* p = p_search_name(name);
+		}
+		if(p==NULL){
+		for(j=i+1; j<MAX_PRODUCT; j++){
+			printf("There is no product!\n");
+			if(products[j] == NULL){
+				return;
+				break
+			}
+		}
+		if(products[max]->profit < products[j]->profit){
+			int choice;
+			max = j;
+			printf("\nChoose what you want to update\n");
+		}
+		printf("\n\t\t\t\t------Select Update------\n\t\t1.Name \t\t\t2.Price \t\t3.Sale Number\n\t\t4.Prime Cost\t\t5.labor Cost\t\t0.Quit\n");
+		p_change_record(i, max);
+		printf("\n\t\t\t\t\t\t\t\tChoice : ");
+		}          
+
+
+
 
 
 

@@ -14,11 +14,12 @@ void sortByProfit();
 void seeReport();
 void sortByName();
 void selectUpdate();
+void showTopTen();
 
 int main(){
 	int menu;
 	while(1){
-		printf("\n\t\t\t\t------Menu------\n\t1.Bring\t\t\t2.Create\t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Selecte Update\t0.Quit\n");
+		printf("\n\t\t\t\t------Menu------\n\t1.Bring\t\t\t2.Create\t\t3.Read\n\t4.List\t\t\t5.Make Report\t\t6.Total Profit\n\t7.Update\t\t8.Delete\t\t9.Save\n\t10.Sort(By Profit)\t11.See Report\t\t12.Sort(By Name)\n\t13.Select Update\t14.Show Top 10\t0.Quit\n");
 		printf("\n\t\t\t\t\t\t\tChoice : ");
 		scanf("%d%*c", &menu);
 		printf("\n");
@@ -62,6 +63,8 @@ int main(){
 			case 13:
 				selectUpdate();
 				break;
+			case 14:
+				showTopTen();
 			case 0:
 			default:
 				return 0;	
@@ -311,7 +314,9 @@ void selectUpdate(){
 	}
 }
 
-
+void showTopTen(){
+	
+}
 
 
 
