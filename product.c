@@ -289,22 +289,18 @@ void p_change_labor(Product* p){
 
 void p_print_top_ten(){
 	int i, j;
+	Product ten[10];
 
 	for(i=0; i<MAX_PRODUCT-1 ; i++){
 		int max = i;
+
 		if(products[i] == NULL){
 			continue;
 		}
 
-		for(j=i+1; j<MAX_PRODUCT; j++){
-			if(products[j] == NULL){
-				continue;
-			}
-			if(products[max]->profit < products[j]->profit){
-				max = j;
-			}
+		if(ten[9]->profit < products[i]->profit){
+			p_sort_ten(ten, i);
 		}
-		p_change_record(i, max);
 	}
 }
 
