@@ -303,6 +303,11 @@ void p_print_top_ten(){
 			p_sort_ten(ten, i, 10);
 		}
 	}
+
+	for(i=0; i<10; i++){
+		printf("%s", p _to_string(ten[i]));
+	}
+
 }
 
 void p_sort_ten(Product* a, int index, int size){
