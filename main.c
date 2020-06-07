@@ -315,7 +315,7 @@ void selectUpdate(){
 }
 
 void showTopTen(){
-	
+	p_print_top_ten();
 }
 
 
