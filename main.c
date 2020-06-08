@@ -315,7 +315,9 @@ void selectUpdate(){
 }
 
 void showTopTen(){
+	printf("\t----------------Top Ten----------------\n");
 	p_print_top_ten();
+	printf("\n");
 }
 
 
