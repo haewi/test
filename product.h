@@ -38,4 +38,4 @@ void p_change_saleNum(Product* p);	// p 안의 레코드의 판매수를 바꾼�
 void p_change_prime(Product* p);	// p 안의 레코드의 원가를 바꾼다
 void p_change_labor(Product* p);	// p 안의 레코드의 인건비를 바꾼다
 void p_print_top_ten();			// 이윤 순서대로 상위 10개의 레코드를 출력한다
-void p_sort_ten(Product* a, int index, int size);
+void p_sort(Product* a[], int index, int size);	// 주어진 배열에 products[index]의 값을 sort해서 넣는다
