@@ -290,6 +290,9 @@ void p_change_labor(Product* p){
 void p_print_top_ten(){
 	int i;
 	Product* ten[10];
+	for(int k=0; k<10; k++){
+		ten[k]=NULL;
+	}
 
 	for(i=0; i<MAX_PRODUCT ; i++){
 		if(products[i] == NULL){
@@ -302,17 +305,27 @@ void p_print_top_ten(){
 	}
 
 	for(i=0; i<10; i++){
-		printf("%s", p_to_string(ten[i]));
+		printf("%s\n", p_to_string(ten[i]));
 	}
 
 }
 
 void p_sort(Product* a[], int index, int size){
+#ifdef DEBUG
+printf("\n[DEBUG 17] p_sort contents\n");
+for(int i=0; i<size; i++){
+	if(a[i]==NULL) break;
+	printf("a[%d] = %d", i, a[i]->profit);
+}
+#endif
 	for(int i=0; i<size; i++){
 		if(a[i] == NULL){
 			a[i] = products[index];
 			break;
 		}
+#ifdef DEBUG
+printf("[DEBUG 18] p_sort null?\n");
+#endif
 
 		if(a[i]->profit < products[index]->profit){
 			for(int j=size-2; j>=i; j--){

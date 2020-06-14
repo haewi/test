@@ -65,6 +65,7 @@ int main(){
 				break;
 			case 14:
 				showTopTen();
+				break;
 			case 0:
 			default:
 				return 0;	
